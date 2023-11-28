@@ -62,7 +62,7 @@ sudo yum versionlock kernel-$(uname -r) kernel-headers-$(uname -r) kernel-devel-
 # Update the OS to begin with to catch up to the latest packages.
 sudo yum update -y
 
-# Install necessary packages
+# Install necessary and utilities packages
 sudo yum install -y \
   aws-cfn-bootstrap \
   chrony \
@@ -76,7 +76,8 @@ sudo yum install -y \
   unzip \
   wget \
   mdadm \
-  pigz
+  pigz \
+  htop
 
 # skip kernel version cleanup on al2023
 if ! cat /etc/*release | grep "al2023" > /dev/null 2>&1; then
